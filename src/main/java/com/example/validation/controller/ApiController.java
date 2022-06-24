@@ -18,7 +18,7 @@ public class ApiController {
 
     @PostMapping("/user")
     public ResponseEntity user(@Valid @RequestBody User user, BindingResult bindingResult) { // @Valid annotation 이 있어야 검증을 함, Validation에 대한 결과가 BindingResult에 값을 넣어줌
-        System.out.println(user);
+        System.out.println("USER: " + user);
         if(bindingResult.hasErrors()){
             StringBuilder sb = new StringBuilder();
             bindingResult.getAllErrors().forEach(objectError -> {
